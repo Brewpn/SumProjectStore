@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
   	@users = User.all
-  	@product = Product.all
+  	@products = Product.all
   end
 end
