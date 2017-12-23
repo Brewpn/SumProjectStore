@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
 
 
 	def show
-
+		@comments = Commentstoproduct.where(product_id: @product.id)
 	end
 
 	def new
