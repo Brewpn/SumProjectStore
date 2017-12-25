@@ -1,4 +1,77 @@
-<div>
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+<html>
+ <head>
+  <meta charset="utf-8">
+  <title>Горизонтальный список</title>
+<style>
+
+    #menu, #menu li {
+
+         /* убрать внутренние отступы */
+
+         /* убрать внешние отступы */
+       
+
+    }
+
+    #menu {
+
+    	padding: 15px;
+         /* цвет фона навигационной панели */
+
+    }
+
+    #menu li{
+    	margin-top : 10px;
+    	text-align: center;
+    	 border: 2px solid black;
+    	background: #03658e;
+    	padding: 15px 30px;
+    	margin-left: 35px;
+        display:inline-block; /* расположить пункты горизонтально */
+
+         /* текст горизонтально по центру */
+
+    }
+
+    #menu a {
+
+        display: block; /* ссылка растягивается на весь пункт li */
+
+        padding: 5px 15px; /* задаем внутренние отступы */
+
+         /* цвет текста */
+
+        text-decoration: none; /* убрать нижнее подчёркивание у ссылок */
+
+    }
+
+    #menu a:hover {
+
+        background: #8AB8CC; /* фон пунктов при наведении */
+
+    }
+
+</style>
+</head>
+<body>
+<ul id="menu">
+<% @products.each do |product|%>
+
+<li style="color: white; width: 19%; height: 19%;">
+<h1 style="text-align: center; color: white"><%= product.title%></h1>
+<p style="text-align: center;"> <i>Author</i> : <%= product.author%></p>
+<h3 style="text-align: center;color: white"><%= product.body%></h3>
+<div style="text-align: center;">
+<img src="<%=product.image_file_name%>"; style="width: 250px; border: 1px solid black; height: 320px">
 </div>
+<p><i>Category : </i><%= product.category.name%></p>
+<p><i> Price : $</i><%=product.price%></p>
+<i>Hurry up! Only </i><b><%=product.in_stock%></b><i> left! </i>
+
+</li>
+
+
+<% end %>
+</ul>
+</body>
+</html>
