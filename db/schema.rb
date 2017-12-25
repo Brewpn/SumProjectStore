@@ -53,12 +53,6 @@ ActiveRecord::Schema.define(version: 20171225131345) do
     t.string "text"
   end
 
-  create_table "commetstoproducts", force: :cascade do |t|
-    t.string "user_id"
-    t.string "product_id"
-    t.string "comment"
-  end
-
   create_table "products", force: :cascade do |t|
     t.string "title"
     t.string "body"
