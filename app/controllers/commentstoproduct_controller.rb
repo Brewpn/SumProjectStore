@@ -4,8 +4,8 @@ class CommentstoproductController  < ApplicationController
 	def create
 		params[:commentstoproduct][:product_id] = params[:product_id]
 		params[:commentstoproduct][:user_id] = current_user.id
-		Commentstoproduct.create(commentstopeuducts_params)
-		redirect_to peoduct_path(params[:product_id])
+		Commentstoproduct.create(commentstoproducts_params)
+		redirect_to product_path(params[:product_id])
 	end
 
 	private
