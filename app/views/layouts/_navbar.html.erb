@@ -30,10 +30,11 @@
 }
 </style>
 <div class="topnav" id="myTopnav">
-  <a class="active" href="#home">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
+  <%= link_to "Home", root_path%>
+  <%= link_to "Assortment", root_path %>
+  <div style="margin-left: 38%">
+  <a class="active">BOOK TEMPLE - A book holds a house of gold.</a>
+  </div>
     <ul style="margin-left: 90%">
     <% if current_user.nil? %>
     <li>
@@ -57,3 +58,4 @@
        <% end %>
     </ul>
 </div>
+
