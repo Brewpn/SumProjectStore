@@ -13,6 +13,8 @@ gem 'activeadmin'
 gem 'bootstrap-sass'
 # jquery 
 gem 'jquery-rails'
+# gem for products images
+gem 'paperclip'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
