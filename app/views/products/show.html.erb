@@ -70,19 +70,19 @@
     }
 
     #menu {
-
+    	text-align: center;
     	padding: 15px;
          /* цвет фона навигационной панели */
 
     }
 
     #menu li{
+
     	margin-top : 10px;
     	text-align: center;
     	 border: 2px solid black;
     	background: #03658e;
     	padding: 15px 30px;
-    	margin-left: 35px;
         display:inline-block; /* расположить пункты горизонтально */
 
          /* текст горизонтально по центру */
@@ -117,21 +117,19 @@
 </head>
 <body>
 <ul id="menu">
-<% @products.each do |product|%>
 <li style="color: white; width: 19%; height: 19%;" href="#">
-<h1 style="text-align: center; color: white;text-decoration: none;"><%= link_to product.title, product_path(product.id)%></h1>
-<p style="text-align: center;"> <i>Author</i> : <%= product.author%></p>
-<h5 style="text-align: center;color: white"><%= product.body%></h5>
+<h1 style="text-align: center; color: white;text-decoration: none;"><%=@product.title%></h1>
+<p style="text-align: center;"> <i>Author</i> : <%= @product.author%></p>
+<h5 style="text-align: center;color: white"><%= @product.body%></h5>
 <div style="text-align: center;">
-<img src="<%=product.image_file_name%>"; style="width: 250px; border: 1px solid black; height: 320px">
+<img src="<%=@product.image_file_name%>"; style="width: 250px; border: 1px solid black; height: 320px">
 </div>
-<p><i>Category : </i><%= product.category.name%><i style="margin-left:40px;">Price : $</i><%=product.price%></p>
-<i>Hurry up! Only </i><b><%=product.in_stock%></b><i> left! </i>
+<p><i>Category : </i><%= @product.category.name%><i style="margin-left:40px;">Price : $</i><%=@product.price%></p>
+<i>Hurry up! Only </i><b><%=@product.in_stock%></b><i> left! </i>
 
 </li>
 
 
-<% end %>
 </ul>
 </body>
 </html>
