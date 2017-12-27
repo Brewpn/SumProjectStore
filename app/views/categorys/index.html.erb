@@ -1,4 +1,3 @@
-
 <html>
  <head>
   <meta charset="utf-8">
@@ -78,10 +77,10 @@
     }
 
     #menu li{
+      background-color: #DDDDDD;
     	margin-top : 10px;
     	text-align: center;
     	 border: 2px solid black;
-    	background: #03658e;
     	padding: 15px 30px;
     	margin-left: 35px;
         display:inline-block; /* расположить пункты горизонтально */
@@ -90,7 +89,7 @@
 
     }
 
-    #menu li h1 a {
+    #menu li h2 a {
 
      display: block; /* Ссылка как блочный элемент */
      text-align: center; /* Выравнивание по центру */
@@ -117,22 +116,11 @@
 </style>
 </head>
 <body>
-</br>
-  <h2 style="text-align: center; background-color: #DDDDDD;"> Category : 	 <%=@categorys.name %></h2>
-</br>
-<hr>
+<h1 style="text-align: center;"> Select the category below:  </h1>
 <ul id="menu">
-<% @products.each do |product|%>
-<li style="color: white; width: 19%; height: 19%;" href="#">
-<h1 style="text-align: center; color: white;text-decoration: none;"><%= link_to product.title, product_path(product.id)%></h1>
-<p style="text-align: center;"> <i>Author</i> : <%= product.author%></p>
-<h5 style="text-align: center;color: white"><%= product.body%></h5>
-<div style="text-align: center;">
-<img src="<%=product.image_file_name%>"; style="width: 250px; border: 1px solid black; height: 320px">
-</div>
-<p><i>Category : </i><%= product.category.name%><i style="margin-left:40px;">Price : $</i><%=product.price%></p>
-<i>Hurry up! Only </i><b><%=product.in_stock%></b><i> left! </i>
-
+<% @categorys.each do |category|%>
+<li style="color: white; width: 10%; height: 10%;">
+<h2><%=link_to category.name, category_path(category.id)%></h2>
 </li>
 
 
