@@ -117,7 +117,7 @@
 </head>
 <body>
 <h1 style="text-align: center;"> Select the category below:  </h1>
-<ul id="menu">
+<ul id="menu" style="text-align: center;">
 <% @categorys.each do |category|%>
 <li style="color: white; width: 10%; height: 10%;">
 <h2><%=link_to category.name, category_path(category.id)%></h2>
